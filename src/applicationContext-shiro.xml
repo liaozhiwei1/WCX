@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        	 <property name="securityManager" ref="SecurityManager"></property>
+        	 <property name="loginUrl" value="/login"></property>
+        	 <property name="successUrl" value="/index.jsp"></property>
+        	 <property name="filters">
+        	 	<map>
+        	 		<entry key="authc" value-ref="MyFormAuthenticationFilter"></entry>
+        	 	</map>
+        	 </property>
+        	<property name="filterChainDefinitions">  
+		        <value>
+		        	/css/**=anon
+		        	/js/**=anon
+		        	/ioc/**=anon
+		        	/fonts/**=anon
+		        	/img/**=anon
+		        	/yzm=anon
+		        	/sendregistered=anon
+		        	/registered=anon
+		           	/registered.jsp=anon
+		        	/tologin=anon
+		            /login=authc
+		           	/logout=logout
+		            /** = user
+		        </value>
+		    </property>
+        </bean>
+        <bean id="MyFormAuthenticationFilter" class="wcx.myFrom.MyFormAuthenticationFilter"></bean>
+        <bean id="SecurityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        	<property name="realm" ref="userRealm"></property>
+        </bean>
+        <bean id="userRealm" class="wcx.ralm.userRealm">
+        <property name="d" ref="Servicelpm"></property>
+        </bean>    
+</beans>
