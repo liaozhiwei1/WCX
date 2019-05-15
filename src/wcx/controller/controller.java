@@ -39,6 +39,8 @@ public class controller {
 	
 	@Resource
 	private da d;
+	
+	
 	@RequestMapping("/selAllData")
 	@ResponseBody
 	public String  selAllData(){
@@ -90,6 +92,7 @@ public class controller {
 		}
 		return m;
 	}
+	
 	@RequestMapping("yzm")
 	public void yzm (HttpServletRequest arg0, HttpServletResponse arg1) throws IOException{
 		ValidateCode vc =new ValidateCode();
@@ -165,5 +168,4 @@ public class controller {
 		}
 		return m;
 	}
-	
 }

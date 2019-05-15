@@ -36,8 +36,7 @@ public class userRealm extends AuthorizingRealm{
 		if (username == null) {
             throw new AccountException("Null usernames are not allowed by this realm.");
         }
-		String password=d.login(username);
-		System.out.println(password);
+		String password=d.login(username);  //根据用户名查询password字段
 		SimpleAuthenticationInfo si=new SimpleAuthenticationInfo(username, password, getName());
 		return si;
 	}

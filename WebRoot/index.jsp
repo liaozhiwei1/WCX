@@ -405,12 +405,12 @@
 						id1.push(data[data.length-1].id);
 					};
 					if(data[data.length-1].humidity>90&&sflag1==0){
-						$("#hs2").html("传感器一的湿度过高，请及时处理!");
+						$("#hs2").html("传感器二的湿度过高，请及时处理!");
 						$("#w2").modal('show');
 						sflag1=1;
 					};
 					if(data[data.length-1].temperature>30&&wflag1==0){
-						$("#h").html("传感器一的温度过高，请及时处理!");
+						$("#h").html("传感器二的温度过高，请及时处理!");
 						$("#myModal").modal('show');
 						wflag1=1;
 					};
@@ -421,12 +421,12 @@
 						wflag1=0;
 					};
 					if(data[data.length-1].temperature<10&&wflag1==0){
-						$("#hs2").html("传感器一的温度过低，请及时处理!");
+						$("#hs2").html("传感器二的温度过低，请及时处理!");
 						$("#w2").modal('show');
 						wflag1=1
 					};
 					if(data[data.length-1].humidity<70&&sflag1==0){
-						$("#hw2").html("传感器一的湿度过低，请及时处理!");
+						$("#hw2").html("传感器二的湿度过低，请及时处理!");
 						$("#myModal").modal('show');
 						sflag1=1;
 					};
@@ -443,12 +443,12 @@
 						id2.push(data[data.length-1].id);
 					}
 					if(data[data.length-1].humidity>90&&sflag2==0){
-						$("#hs3").html("传感器一的湿度过高，请及时处理!");
+						$("#hs3").html("传感器三的湿度过高，请及时处理!");
 						$("#s1").modal('show');
 						sflag2=1;
 					};
 					if(data[data.length-1].temperature>30&&wflag2==0){
-						$("#hw3").html("传感器一的温度过高，请及时处理!");
+						$("#hw3").html("传感器三的温度过高，请及时处理!");
 						$("#w3").modal('show');
 						wflag2=1;
 					};
@@ -459,12 +459,12 @@
 						wflag2=0;
 					};
 					if(data[data.length-1].temperature<10&&wflag2==0){
-						$("#hw3").html("传感器一的温度过低，请及时处理!");
+						$("#hw3").html("传感器三的温度过低，请及时处理!");
 						$("#w3").modal('show');
 						wflag2=1
 					};
 					if(data[data.length-1].humidity<70&&sflag2==0){
-						$("#hs3").html("传感器一的湿度过低，请及时处理!");
+						$("#hs3").html("传感器三的湿度过低，请及时处理!");
 						$("#s3").modal('show');
 						sflag2=1;
 					};
